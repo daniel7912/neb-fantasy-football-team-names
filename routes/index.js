@@ -7,7 +7,8 @@ var env = process.env.NODE_ENV || 'dev';
 if (env === 'dev' || env === 'development') {
   dappAddress = 'n1ezCBRtS4gYv9fBBJZ6HRPX8AGRzZDFeJx';
 } else {
-  dappAddress = 'n1nKJbTqcRSfMXQeJzWayyZGeWiGeTCuPTR';
+  dappAddress = 'n1gmTkArmdpEUn3vnkqtVe11VHzV84p5oKb';
+  // TX Hash - 947e008235354ea433c31b7462def421fe64419e75cf42ab7096072f502bbf8b
 }
 
 /* GET home page. */
