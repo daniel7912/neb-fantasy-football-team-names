@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+  section.section
+    .container
+      include ./includes/no-extension.jade
+
+      #addTeamSuccess.modal
+        .modal-background
+        .modal-content
+          .box
+            p
+              | Team name transaction completed successfully. Once processed, your team name will appear on the website.
+            p
+              button#closeModal.button.is-danger Close
+      h2.title.is-5 New Team Name
+      .columns
+        .column.is-two-thirds
+          .field
+            .control
+              input#teamName.input(type='text', placeholder='Your team name')
+          .field
+            .control
+              .select.is-multiple
+                select#associatedTeams(multiple='', size='5')
+                  each team in teamNames
+                    option(value=(team.slug)) #{team.name}
+          .field
+            .control
+              button#addNew.button.is-link Add team name
+            
+  script.
+    $(document).ready(function() {
+      checkWebExtensionWallet();
+
+      $('#addNew').on('click', function() {
+        submitTeamName();
+      });
+      
+      $('#closeModal').on('click', function() {
+        window.location.href = '/';
+      });
+    });

@@ -1,0 +1,22 @@
+[
+  { "name": "Arsenal", "slug": "arsenal" },
+  { "name": "AFC Bournemouth", "slug": "afc-bournemouth" },
+  { "name": "Brighton and Hove Albion", "slug": "brighton-and-hove-albion" },
+  { "name": "Burnley", "slug": "burnley" },
+  { "name": "Chelsea", "slug": "chelsea" },
+  { "name": "Crystal Palace", "slug": "crystal-palace" },
+  { "name": "Everton", "slug": "everton" },
+  { "name": "Huddersfield Town", "slug": "huddersfield-town" },
+  { "name": "Leicester City", "slug": "leicester-city" },
+  { "name": "Liverpool", "slug": "liverpool" },
+  { "name": "Manchester City", "slug": "manchester-city" },
+  { "name": "Manchester United", "slug": "manchester-united" },
+  { "name": "Newcastle United", "slug": "newcastle-united" },
+  { "name": "Southampton", "slug": "southampton" },
+  { "name": "Stoke City", "slug": "stoke-city" },
+  { "name": "Swansea City", "slug": "swansea-city" },
+  { "name": "Tottenham Hotspur", "slug": "tottenham-hotspur" },
+  { "name": "Watford", "slug": "watford" },
+  { "name": "West Bromwich Albion", "slug": "west-bromwich-albion" },
+  { "name": "West Ham United", "slug": "west-ham-united" }
+]

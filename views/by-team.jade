@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  section.section
+    .container
+      include ./includes/no-extension.jade
+      
+      h2.title.is-4 Team names related to #{team.name}
+
+      #team-names-container.columns.is-multiline
+            
+  script.
+    $(document).ready(function() {
+      checkWebExtensionWallet();
+
+      var slug = "#{team.slug}";
+      loadFilteredTeamNames(slug);
+
+      $('body').on('click', 'a.vote-button', function(e) {
+        e.preventDefault();
+        var key = $(this).data('key');
+        submitVote(key);
+      });
+    });

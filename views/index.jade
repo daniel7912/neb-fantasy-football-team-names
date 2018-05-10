@@ -1,0 +1,51 @@
+extends layout
+
+block content
+
+  section.section
+    .container
+      include ./includes/no-extension.jade
+
+      .field
+        .control
+          h4.title.is-4 Filter by team
+          .select.is-multiple
+            select#associatedTeams
+              option Select a team
+              each team in teamNames
+                option(value=(team.slug)) #{team.name}
+      hr
+      h3.title.is-4 All Team Names
+      #team-names-container.columns.is-multiline
+      hr
+      .message.is-dark
+        h4.message-header About this app
+        .message-body
+          p
+            | Fantasy Football Team Names is a simple dApp which allows you to add ideas for names to be used in Fantasy Football games. This information is stored on the 
+            a(href='https://nebulas.io/', target='_blank') Nebulas
+            |  network.
+          p
+            | To be able to use this app, you must have the 
+            a(target='_blank', href='https://github.com/ChengOrangeJu/WebExtensionWallet') WebExtensionWallet
+            |  installed and have your wallet file loaded.
+          p
+            | This app 
+            strong does not
+            |  transfer NAS in any way.
+            
+  script.
+    $(document).ready(function() {
+      checkWebExtensionWallet();
+      loadTeamNames();
+
+      $('body').on('click', 'a.vote-button', function(e) {
+        e.preventDefault();
+        var key = $(this).data('key');
+        submitVote(key, $(this));
+      });
+
+      $('#associatedTeams').on('change', function() {
+        window.location.href = '/team/'+$(this).val();
+      });
+    });
