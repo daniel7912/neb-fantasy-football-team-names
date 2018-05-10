@@ -38,38 +38,40 @@ function loadTeamNames() {
 }
 
 function showTeamNamesInfo(resp) {
-  var result = JSON.parse(resp.result);
-  if (result && result.length) {
-    result.forEach(function(r) {
-      $('#team-names-container').append(`
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-content">
-              <div class="content has-text-centered">
-                ${r.name}
+  if (resp && resp.result) {
+    var result = JSON.parse(resp.result);
+    if (result && result.length) {
+      result.forEach(function(r) {
+        $('#team-names-container').append(`
+          <div class="column is-one-third">
+            <div class="card">
+              <div class="card-content">
+                <div class="content has-text-centered">
+                  ${r.name}
+                </div>
               </div>
+              <footer class="card-footer">
+                <p class="card-footer-item" data-number="${r.votes}">
+                  ${r.votes} votes
+                </p>
+                <a href="#" class="vote-button card-footer-item" data-key="${r.key}">Vote</a>
+              </footer>
             </div>
-            <footer class="card-footer">
-              <p class="card-footer-item" data-number="${r.votes}">
-                ${r.votes} votes
-              </p>
-              <a href="#" class="vote-button card-footer-item" data-key="${r.key}">Vote</a>
-            </footer>
+          </div>
+        `);
+      });
+    } else {
+      $('#team-names-container').html(`
+        <div class="column">
+          <div class="message is-danger">
+            <h4 class="message-header">No teams</h4>
+            <div class="message-body">
+              Could not find any team names
+            </div>
           </div>
         </div>
-      `);
-    });
-  } else {
-    $('#team-names-container').html(`
-      <div class="column">
-        <div class="message is-danger">
-          <h4 class="message-header">No teams</h4>
-          <div class="message-body">
-            Could not find any team names
-          </div>
-        </div>
-      </div>
-    `)
+      `)
+    }
   }
 }
 

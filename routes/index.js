@@ -4,7 +4,7 @@ var teamNames = require('./includes/real-team-names.json');
 var dappAddress;
 
 var env = process.env.NODE_ENV || 'dev';
-if (env === 'dev') {
+if (env === 'dev' || env === 'development') {
   dappAddress = 'n1ezCBRtS4gYv9fBBJZ6HRPX8AGRzZDFeJx';
 } else {
   dappAddress = 'n1nKJbTqcRSfMXQeJzWayyZGeWiGeTCuPTR';
