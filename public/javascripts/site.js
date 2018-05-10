@@ -16,7 +16,6 @@ function funcIntervalQuery(serialNumber) {
         var respObject = JSON.parse(resp)
         if(respObject.code === 0){
             clearInterval(intervalQuery)
-            $('#addTeamSuccess').addClass('is-active');
         }
     })
     .catch(function (err) {
@@ -97,6 +96,7 @@ function submitTeamName() {
 
     var serialNumber = nebPay.call(dappAddress, '0', 'save', callArgs, {
       listener: function(resp) {
+        $('#addTeamSuccess').addClass('is-active');
         // console.log('response of push: ' + JSON.stringify(resp));
       }
     });
